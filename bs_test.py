@@ -1,21 +1,6 @@
-# from pystalk import BeanstalkClient
-# import json
-#
-#
-# client = BeanstalkClient("127.0.0.1", 11300)
-#
-# dicts = {
-#     "name": "nasri adzlani",
-#     "job": "data engineer",
-#     "studied": "yogyakarta Techology of University",
-# }
-#
-# with client.using("anjay") as inserter:
-#     inserter.put_job(json.dumps(dicts))
-
-
 from pystalk import BeanstalkClient
 import time
+
 
 def measure_beanstalkd_performance(host='localhost', port=11300, num_jobs=200_000):
     beanstalk = BeanstalkClient(host=host, port=port)
