@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+  redis:
+    container_name: redis-queue
+    image: redis:6.0-alpine
+    command: redis-server /etc/redis.conf
+    volumes:
+      - "./redis/redis.conf:/etc/redis.conf"
+    ports:
+      - "6379:6379"
+
+  beanstalkd:
+    image: schickling/beanstalkd
+    container_name: beanstalkd
+    volumes:
+      - "data:/var/lib/beanstalkd"
+    ports:
+      - "11300:11300"
+
+volumes:
+  data:

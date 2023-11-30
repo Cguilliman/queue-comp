@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "queue"
+version = "0.1.0"
+description = ""
+authors = ["Ihor <cguilliman@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11.6"
+redis = "^5.0.1"
+pystalk = "^0.7.0"
+rq = "^1.15.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
